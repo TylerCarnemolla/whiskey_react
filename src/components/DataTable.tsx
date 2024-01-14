@@ -55,27 +55,33 @@ function DataTable() {
       />
       <div className='flex  flex-row'>
         <div>
-          <button className='p-3 m-3 rounded-lg bg-blue-500 border-2 border-blue-300 hover:bg-blue-300'
+          <button className='p-3 m-3 rounded-lg  bg-red-800 border-2 text-white border-grey-900 hover:bg-red-500'
           onClick={()=> handleOpen()}>
             Add Bottle to Collection
 
           </button>
         </div>
-        <button onClick={handleOpen} className="p-3 m-3 rounded-lg bg-blue-500 border-2 border-blue-300 hover:bg-blue-300" >Update</button>
-        <button onClick={deleteData} className="p-3 m-3 rounded-lg bg-blue-500 border-2 border-blue-300 hover:bg-blue-300" >Delete</button>
+        <button onClick={handleOpen} className="p-3 m-3 rounded-lg bg-red-800 border-2 border-grey-900 text-white hover:bg-red-500" >Update</button>
+        <button onClick={deleteData} className="p-3 m-3 rounded-lg bg-red-800 border-2 border-grey-900 text-white hover:bg-red-500" >Delete</button>
       </div>
       {/* data table section */}
       <div className={open?  "hidden": "container mx-10 my-5 flex flex-col"}
         style = {{height: 400, width: '100%'}}
         >
-          <h2 className="p-3 bg-slate-300 my-2 rounded">Collection</h2>
+          <h2 className="p-3 bg-red-800 text-white my-2 rounded">Collection</h2>
+            <div className='bg-gray-500'>
           
-          <DataGrid rows={bottleData} columns={columns} rowsPerPageOptions={[5]}
-          checkboxSelection={true}
-          onRowSelectionModelChange={(item:any)=> {
-            setSelectionModel(item)
-          }}
-          />
+                    <DataGrid rows={bottleData} columns={columns} rowsPerPageOptions={[5]}
+                    checkboxSelection={true}
+                    onRowSelectionModelChange={(item:any)=> {
+                      setSelectionModel(item)
+                    }}
+                  style={{
+                    color: 'white', // Set the text color to white
+                  }}
+                    />
+              </div>
+
       </div>
     </>
   )

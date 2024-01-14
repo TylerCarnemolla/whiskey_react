@@ -1,7 +1,7 @@
-import home from "../pages/Home";
+import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import About from "../pages/About";
-
+import Contact from "../pages/Contact";
 //interface is typscript specific and wont work in the console
 interface RouteType {
     path:string,
@@ -12,12 +12,12 @@ interface RouteType {
 const routes: RouteType[] =[
     {
       path:"",
-      component: home,
+      component: Home,
       name: "Home Screen",
       protected: false
     },
     {
-      path:"/dashboard",
+      path:"/Dashboard",
       component: Dashboard,
       name: "Dashboard",
       protected: true
@@ -28,6 +28,12 @@ const routes: RouteType[] =[
       component: About,
       name:"About",
       protected: false
-    }
+    },
+    {
+      path:"/Contact",
+      component: Contact,
+      name:"Contact",
+      protected: false
+    },
   ];
 export default routes

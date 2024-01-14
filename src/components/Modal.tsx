@@ -1,4 +1,4 @@
-import CarForm from "./bottleForm";
+import BottleForm from "./bottleForm";
 import React from "react";
 
 
@@ -36,7 +36,7 @@ const Modal: React.FC<Props> = (props) => {
                 </p>
             </div>
             <div className="flex flex-col items-center text-center my-3 p-2">
-              <CarForm refreshData = {props.refreshData} onClose={props.onClose} id={props.id}/>
+              <BottleForm refreshData = {props.refreshData} onClose={props.onClose} id={props.id}/>
             </div>
           </div>
 

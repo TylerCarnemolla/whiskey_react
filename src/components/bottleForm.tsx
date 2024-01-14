@@ -12,8 +12,8 @@ interface BottleFormProps{
     refreshData: () => void; 
 }
 
-// const CarForm = (props:BottleFormProps) => {
-const CarForm: React.FC<BottleFormProps> = (props) => {  
+
+const BottleForm: React.FC<BottleFormProps> = (props) => {  
     const {register, handleSubmit} = useForm({})
     const dispatch = useDispatch();
     const store = useStore();
@@ -41,33 +41,32 @@ const CarForm: React.FC<BottleFormProps> = (props) => {
 
     return (//TO DO - add handle function
     <div className="flex flex-col"> 
-      <form  onSubmit={handleSubmit(onSubmit)} className="p-4 flex flex-col" >
-        <div className="flex flex-row">
-        <div className="serperate flex flex-col m-5">
+      <form  onSubmit={handleSubmit(onSubmit)} className="p-4 flex flex-col flex-wrap" >
+        <div className="flex ">
+          
 
-                <div>
-                    <label htmlFor="brand">Make</label>
-                    < Input  {...register('brand')} name='brand' placeholder="Brand"/>
-                </div>
-                <div>
-                    <label htmlFor="kind">Kind</label>
-                    < Input {...register('kind')} name='kind' placeholder="Kind"/>
-                </div>
-        </div>
-        <div className="seperate  flex flex-col m-5">
-                <div>
-                    <label htmlFor="proof">Proof</label>
-                    < Input {...register('proof')} name='proof' placeholder="Proof"/>
-                </div>
-                <div>
-                    <label htmlFor="notes">Tasting Notes</label>
-                    < Input {...register('notes')} name='notes' placeholder="Notes"/>
-                </div>
-                <div>
-                    <label htmlFor="origin">Origin</label>
-                    < Input {...register('origin')} name='origin' placeholder="Origin"/>
-                </div>
-        </div>
+                    <div className="flex flex-col">
+                        <label htmlFor="brand">Make</label>
+                        < Input  {...register('brand')} name='brand' placeholder="Brand"/>
+                    </div>
+                    <div className="flex flex-col">
+                        <label htmlFor="kind">Kind</label>
+                        < Input {...register('kind')} name='kind' placeholder="Kind"/>
+                    </div>
+        
+                    <div className="flex flex-col">
+                        <label htmlFor="proof">Proof</label>
+                        < Input {...register('proof')} name='proof' placeholder="Proof"/>
+                    </div>
+                    <div className="flex flex-col">
+                        <label htmlFor="notes">Tasting Notes</label>
+                        < Input {...register('notes')} name='notes' placeholder="Notes"/>
+                    </div>
+                    <div className="flex flex-col">
+                        <label htmlFor="origin">Origin</label>
+                        < Input {...register('origin')} name='origin' placeholder="Origin"/>
+                    </div>
+        
         </div>
         <div className="seperate">
 
@@ -86,4 +85,4 @@ const CarForm: React.FC<BottleFormProps> = (props) => {
   )
 }
 
-export default CarForm
+export default BottleForm
