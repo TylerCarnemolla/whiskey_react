@@ -59,6 +59,9 @@ export const server_calls = {
                 'x-access-token': `Bearer ${token}`
             }
         })
+        if(response.ok){
+            console.log("Item deleted.")
+        }
       
         
     }

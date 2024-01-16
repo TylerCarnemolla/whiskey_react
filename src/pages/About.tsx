@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Background from '../assets/images/about_bg.jpg'
 
 
